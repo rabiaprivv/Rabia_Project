@@ -12,5 +12,10 @@ router.post("/add", async(req , res)=>{
     res.send("Product added sucessfully")
 })
 
+router.get('/' , async(req,res) => {
+     const data =  await ProductModel.find()
+    res.send({'product':data})
+})
+
 
 module.exports = router
